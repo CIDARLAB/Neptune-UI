@@ -5,11 +5,11 @@
 </template>
 
 <script>
-  export default {
-    name: 'LayoutsFrontend',
+export default {
+  name: "LayoutsFrontend",
 
-    components: {
-      FrontendView: () => import('./View'),
-    },
-  }
+  components: {
+    FrontendView: () => import("./View"),
+  },
+};
 </script>

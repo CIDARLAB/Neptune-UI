@@ -1,10 +1,5 @@
 <template>
-  <v-menu
-    v-model="value"
-    :transition="transition"
-    offset-y
-    v-bind="$attrs"
-  >
+  <v-menu v-model="value" :transition="transition" offset-y v-bind="$attrs">
     <template v-slot:activator="{ attrs, on }">
       <v-btn
         :color="color"
@@ -16,9 +11,7 @@
       >
         <slot />
 
-        <v-icon>
-          mdi-{{ value ? 'menu-up' : 'menu-down' }}
-        </v-icon>
+        <v-icon> mdi-{{ value ? "menu-up" : "menu-down" }} </v-icon>
       </v-btn>
     </template>
 
@@ -39,32 +32,32 @@
 </template>
 
 <script>
-  // Mixins
-  import Proxyable from 'vuetify/lib/mixins/proxyable'
+// Mixins
+import Proxyable from "vuetify/lib/mixins/proxyable";
 
-  export default {
-    name: 'MaterialDropdown',
+export default {
+  name: "MaterialDropdown",
 
-    mixins: [Proxyable],
+  mixins: [Proxyable],
 
-    props: {
-      color: {
-        type: String,
-        default: 'primary',
-      },
-      items: {
-        type: Array,
-        default: () => ([
-          {
-            id: undefined,
-            text: undefined,
-          },
-        ]),
-      },
-      transition: {
-        type: String,
-        default: 'scale-transition',
-      },
+  props: {
+    color: {
+      type: String,
+      default: "primary",
     },
-  }
+    items: {
+      type: Array,
+      default: () => [
+        {
+          id: undefined,
+          text: undefined,
+        },
+      ],
+    },
+    transition: {
+      type: String,
+      default: "scale-transition",
+    },
+  },
+};
 </script>
