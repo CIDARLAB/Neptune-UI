@@ -1,10 +1,5 @@
 <template>
-  <v-app-bar
-    absolute
-    color="transparent"
-    flat
-    height="85"
-  >
+  <v-app-bar absolute color="transparent" flat height="85">
     <v-container class="px-0 text-right d-flex align-center">
       <v-toolbar-title
         class="font-weight-light hidden-xs-only"
@@ -27,42 +22,39 @@
           v-text="item.icon"
         />
 
-        <span
-          class="hidden-sm-and-down"
-          v-text="item.text"
-        />
+        <span class="hidden-sm-and-down" v-text="item.text" />
       </v-btn>
     </v-container>
   </v-app-bar>
 </template>
 
 <script>
-  export default {
-    name: 'PagesCoreAppBar',
+export default {
+  name: "PagesCoreAppBar",
 
-    data: () => ({
-      items: [
-        {
-          icon: 'mdi-account-multiple-plus',
-          text: 'Register',
-          to: '/register',
-        },
-        {
-          icon: 'mdi-fingerprint',
-          text: 'Login',
-          to: '/login',
-        },
-      ],
-      titles: {
-        '/login': 'Login Page',
-        '/register': 'Register Page',
+  data: () => ({
+    items: [
+      {
+        icon: "mdi-account-multiple-plus",
+        text: "Register",
+        to: "/register",
       },
-    }),
-
-    computed: {
-      title () {
-        return this.titles[this.$route.path]
+      {
+        icon: "mdi-fingerprint",
+        text: "Login",
+        to: "/login",
       },
+    ],
+    titles: {
+      "/login": "Login Page",
+      "/register": "Register Page",
     },
-  }
+  }),
+
+  computed: {
+    title() {
+      return this.titles[this.$route.path];
+    },
+  },
+};
 </script>

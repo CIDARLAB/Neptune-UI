@@ -9,21 +9,21 @@
 </template>
 
 <script>
-  export default {
-    name: 'PagesIndex',
+export default {
+  name: "PagesIndex",
 
-    components: {
-      PagesCoreAppBar: () => import('./components/core/AppBar'),
-      PagesCoreFooter: () => import('./components/core/Footer'),
-      PagesCoreView: () => import('./components/core/View'),
-    },
+  components: {
+    PagesCoreAppBar: () => import("./components/core/AppBar"),
+    PagesCoreFooter: () => import("./components/core/Footer"),
+    PagesCoreView: () => import("./components/core/View"),
+  },
 
-    created () {
-      this.$vuetify.theme.dark = true
-    },
+  created() {
+    this.$vuetify.theme.dark = true;
+  },
 
-    beforeDestroy () {
-      this.$vuetify.theme.dark = false
-    },
-  }
+  beforeDestroy() {
+    this.$vuetify.theme.dark = false;
+  },
+};
 </script>

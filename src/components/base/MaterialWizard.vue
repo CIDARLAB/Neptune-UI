@@ -1,9 +1,5 @@
 <template>
-  <v-card
-    class="v-card--wizard"
-    elevation="12"
-    max-width="700"
-  >
+  <v-card class="v-card--wizard" elevation="12" max-width="700">
     <v-card-title class="justify-center display-2 font-weight-light pt-5">
       Build your profile
     </v-card-title>
@@ -20,10 +16,7 @@
       grow
       slider-size="50"
     >
-      <v-tabs-slider
-        class="mt-1"
-        color="success"
-      />
+      <v-tabs-slider class="mt-1" color="success" />
 
       <v-tab
         v-for="(item, i) in items"
@@ -62,49 +55,49 @@
         min-width="100"
         @click="$emit('click:next')"
       >
-        {{ internalValue === items.length - 1 ? 'Finish' : 'Next' }}
+        {{ internalValue === items.length - 1 ? "Finish" : "Next" }}
       </v-btn>
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
-  // Mixins
-  import Proxyable from 'vuetify/lib/mixins/proxyable'
+// Mixins
+import Proxyable from "vuetify/lib/mixins/proxyable";
 
-  export default {
-    name: 'BaseMaterialWizard',
+export default {
+  name: "BaseMaterialWizard",
 
-    mixins: [Proxyable],
+  mixins: [Proxyable],
 
-    props: {
-      availableSteps: {
-        type: Array,
-        default: () => ([]),
-      },
-      items: {
-        type: Array,
-        default: () => ([]),
-      },
+  props: {
+    availableSteps: {
+      type: Array,
+      default: () => [],
     },
-  }
+    items: {
+      type: Array,
+      default: () => [],
+    },
+  },
+};
 </script>
 
 <style lang="sass">
-  .v-card--wizard
+.v-card--wizard
+  overflow: visible
+
+  .v-tabs-bar
+    height: 56px
+    padding: 0 8px
+
+  .v-tabs-slider-wrapper
     overflow: visible
 
-    .v-tabs-bar
-      height: 56px
-      padding: 0 8px
+  .v-tabs-slider
+    border-radius: 4px
 
-    .v-tabs-slider-wrapper
-      overflow: visible
-
-    .v-tabs-slider
-      border-radius: 4px
-
-    .v-tabs-slider-wrapper
-      contain: initial
-      z-index: 0
+  .v-tabs-slider-wrapper
+    contain: initial
+    z-index: 0
 </style>
