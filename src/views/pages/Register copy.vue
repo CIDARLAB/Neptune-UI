@@ -1,34 +1,17 @@
 <template>
-  <v-container
-    id="register"
-    class="fill-height justify-center"
-    tag="section"
-  >
+  <v-container id="register" class="fill-height justify-center" tag="section">
     <v-row justify="center">
-      <v-col
-        cols="12"
-        md="9"
-      >
+      <v-col cols="12" md="9">
         <v-slide-y-transition appear>
-          <v-card
-            class="pa-3 pa-md-5 mx-auto"
-            light
-          >
+          <v-card class="pa-3 pa-md-5 mx-auto" light>
             <pages-heading class="text-center display-3">
               Register
             </pages-heading>
 
             <v-row>
-              <v-col
-                cols="12"
-                md="6"
-              >
+              <v-col cols="12" md="6">
                 <v-row no-gutters>
-                  <v-col
-                    v-for="(section, i) in sections"
-                    :key="i"
-                    cols="12"
-                  >
+                  <v-col v-for="(section, i) in sections" :key="i" cols="12">
                     <v-list-item three-line>
                       <v-list-item-icon class="mr-4 mt-5 mt-md-4">
                         <v-icon
@@ -51,10 +34,7 @@
                 </v-row>
               </v-col>
 
-              <v-col
-                cols="12"
-                md="6"
-              >
+              <v-col cols="12" md="6">
                 <div class="text-center">
                   <v-btn
                     v-for="(social, i) in socials"
@@ -94,25 +74,17 @@
                     prepend-icon="mdi-lock-outline"
                   />
 
-                  <v-checkbox
-                    :input-value="true"
-                    color="secondary"
-                  >
+                  <v-checkbox :input-value="true" color="secondary">
                     <template v-slot:label>
                       <span class="text-no-wrap">I agree to the&nbsp;</span>
 
-                      <a
-                        class="secondary--text ml-6 ml-sm-0"
-                        href="#"
-                      >
-                        terms and conditions
-                      </a>.
+                      <a class="secondary--text ml-6 ml-sm-0" href="#">
+                        terms and conditions </a
+                      >.
                     </template>
                   </v-checkbox>
 
-                  <pages-btn color="success">
-                    Get Started
-                  </pages-btn>
+                  <pages-btn color="success"> Get Started </pages-btn>
                 </div>
               </v-col>
             </v-row>
@@ -124,60 +96,62 @@
 </template>
 
 <script>
-  export default {
-    name: 'PagesRegister',
+export default {
+  name: "PagesRegister",
 
-    components: {
-      PagesBtn: () => import('./components/Btn'),
-      PagesHeading: () => import('./components/Heading'),
-    },
+  components: {
+    PagesBtn: () => import("./components/Btn"),
+    PagesHeading: () => import("./components/Heading"),
+  },
 
-    data: () => ({
-      sections: [
-        {
-          icon: 'mdi-chart-timeline-variant',
-          iconColor: 'primary',
-          title: 'Marketing',
-          text: 'We\'ve created the marketing campaign of the website. It was a very interesting collaboration.',
-        },
-        {
-          icon: 'mdi-code-tags',
-          iconColor: 'secondary',
-          title: 'Fully Coded in HTML5',
-          text: 'We\'ve developed the website with HTML5 and CSS3. The client has access to the code using GitHub.',
-        },
-        {
-          icon: 'mdi-account-multiple',
-          iconColor: 'cyan',
-          title: 'Built Audience',
-          text: 'There is also a Fully Customizable CMS Admin Dashboard for this product.',
-        },
-      ],
-      socials: [
-        {
-          href: '#',
-          icon: 'mdi-twitter',
-          iconColor: '#1DA1F2',
-        },
-        {
-          href: '#',
-          icon: 'mdi-dribbble',
-          iconColor: '#ea4c89',
-        },
-        {
-          href: '#',
-          icon: 'mdi-facebook',
-          iconColor: '#3B5998',
-        },
-
-      ],
-    }),
-  }
+  data: () => ({
+    sections: [
+      {
+        icon: "mdi-chart-timeline-variant",
+        iconColor: "primary",
+        title: "Marketing",
+        text:
+          "We've created the marketing campaign of the website. It was a very interesting collaboration.",
+      },
+      {
+        icon: "mdi-code-tags",
+        iconColor: "secondary",
+        title: "Fully Coded in HTML5",
+        text:
+          "We've developed the website with HTML5 and CSS3. The client has access to the code using GitHub.",
+      },
+      {
+        icon: "mdi-account-multiple",
+        iconColor: "cyan",
+        title: "Built Audience",
+        text:
+          "There is also a Fully Customizable CMS Admin Dashboard for this product.",
+      },
+    ],
+    socials: [
+      {
+        href: "#",
+        icon: "mdi-twitter",
+        iconColor: "#1DA1F2",
+      },
+      {
+        href: "#",
+        icon: "mdi-dribbble",
+        iconColor: "#ea4c89",
+      },
+      {
+        href: "#",
+        icon: "mdi-facebook",
+        iconColor: "#3B5998",
+      },
+    ],
+  }),
+};
 </script>
 
 <style lang="sass">
-  #register
-    .v-list-item__subtitle
-      -webkic-line-clamp: initial
-      -webkit-box-orient: initial
+#register
+  .v-list-item__subtitle
+    -webkic-line-clamp: initial
+    -webkit-box-orient: initial
 </style>

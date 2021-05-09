@@ -1,19 +1,9 @@
 <template>
-  <v-container
-    id="validation-forms"
-    fluid
-    tag="section"
-  >
-    <base-v-component
-      heading="Forms"
-      link="components/forms"
-    />
+  <v-container id="validation-forms" fluid tag="section">
+    <base-v-component heading="Forms" link="components/forms" />
 
     <v-row>
-      <v-col
-        cols="12"
-        md="6"
-      >
+      <v-col cols="12" md="6">
         <base-material-card
           color="success"
           icon="mdi-mail"
@@ -21,10 +11,7 @@
           class="py-3 px-5"
         >
           <v-form>
-            <v-text-field
-              color="secondary"
-              label="Email Address*"
-            />
+            <v-text-field color="secondary" label="Email Address*" />
 
             <v-text-field
               label="Password*"
@@ -42,30 +29,20 @@
               @click:append.prevent="show2 = !show2"
             />
 
-            <div class="body-2 font-weight-light">
-              * Required Fields
-            </div>
+            <div class="body-2 font-weight-light">* Required Fields</div>
 
             <v-card-actions class="pa-0">
               <v-checkbox label="Subscribe to newsletter" />
 
               <v-spacer />
 
-              <v-btn
-                default
-                color="success"
-              >
-                Register
-              </v-btn>
+              <v-btn default color="success"> Register </v-btn>
             </v-card-actions>
           </v-form>
         </base-material-card>
       </v-col>
 
-      <v-col
-        cols="12"
-        md="6"
-      >
+      <v-col cols="12" md="6">
         <base-material-card
           color="success"
           icon="mdi-camera-account"
@@ -73,10 +50,7 @@
           class="py-3 px-5"
         >
           <v-form>
-            <v-text-field
-              color="secondary"
-              label="Email Address*"
-            />
+            <v-text-field color="secondary" label="Email Address*" />
 
             <v-text-field
               label="Password*"
@@ -89,12 +63,7 @@
             <v-card-actions class="pa-0">
               <v-spacer />
 
-              <v-btn
-                default
-                color="success"
-              >
-                Login
-              </v-btn>
+              <v-btn default color="success"> Login </v-btn>
             </v-card-actions>
           </v-form>
         </base-material-card>
@@ -109,14 +78,8 @@
               title="Type Validation"
               class="px-5 py-3"
             >
-              <v-row
-                align="center"
-                dense
-              >
-                <v-col
-                  class="text-right body-1 grey--text"
-                  cols="2"
-                >
+              <v-row align="center" dense>
+                <v-col class="text-right body-1 grey--text" cols="2">
                   Required Text
                 </v-col>
 
@@ -139,14 +102,8 @@
                 </v-col>
               </v-row>
 
-              <v-row
-                align="center"
-                dense
-              >
-                <v-col
-                  class="text-right body-1 grey--text"
-                  cols="2"
-                >
+              <v-row align="center" dense>
+                <v-col class="text-right body-1 grey--text" cols="2">
                   Email
                 </v-col>
 
@@ -170,14 +127,8 @@
                 </v-col>
               </v-row>
 
-              <v-row
-                align="center"
-                dense
-              >
-                <v-col
-                  class="text-right body-1 grey--text"
-                  cols="2"
-                >
+              <v-row align="center" dense>
+                <v-col class="text-right body-1 grey--text" cols="2">
                   Number
                 </v-col>
 
@@ -201,14 +152,8 @@
                 </v-col>
               </v-row>
 
-              <v-row
-                align="center"
-                dense
-              >
-                <v-col
-                  class="text-right body-1 grey--text"
-                  cols="2"
-                >
+              <v-row align="center" dense>
+                <v-col class="text-right body-1 grey--text" cols="2">
                   Url
                 </v-col>
 
@@ -233,11 +178,7 @@
               </v-row>
 
               <div class="pa-3 text-center">
-                <v-btn
-                  color="success"
-                  default
-                  type="submit"
-                >
+                <v-btn color="success" default type="submit">
                   Validate Inputs
                 </v-btn>
               </div>
@@ -249,19 +190,9 @@
       <v-col cols="12">
         <validation-observer v-slot="{ handleSubmit }">
           <form @submit.prevent="handleSubmit(validateForm)">
-            <base-material-card
-              color="success"
-              inline
-              title="Range Validation"
-            >
-              <v-row
-                align="center"
-                dense
-              >
-                <v-col
-                  class="text-right body-1 grey--text"
-                  cols="2"
-                >
+            <base-material-card color="success" inline title="Range Validation">
+              <v-row align="center" dense>
+                <v-col class="text-right body-1 grey--text" cols="2">
                   Min Length
                 </v-col>
 
@@ -284,14 +215,8 @@
                 </v-col>
               </v-row>
 
-              <v-row
-                align="center"
-                dense
-              >
-                <v-col
-                  class="text-right body-1 grey--text"
-                  cols="2"
-                >
+              <v-row align="center" dense>
+                <v-col class="text-right body-1 grey--text" cols="2">
                   Max Length
                 </v-col>
 
@@ -315,11 +240,7 @@
               </v-row>
 
               <div class="pa-3 text-center">
-                <v-btn
-                  color="success"
-                  default
-                  type="submit"
-                >
+                <v-btn color="success" default type="submit">
                   Validate Inputs
                 </v-btn>
               </div>
@@ -332,29 +253,29 @@
 </template>
 
 <script>
-  export default {
-    name: 'DashboardFormsValidationForms',
+export default {
+  name: "DashboardFormsValidationForms",
 
-    $_veeValidate: {
-      validator: 'new',
+  $_veeValidate: {
+    validator: "new",
+  },
+
+  data: () => ({
+    email: "",
+    max: "",
+    min: "",
+    number: null,
+    url: "",
+    required: "",
+    show: false,
+    show2: false,
+    show3: false,
+  }),
+
+  methods: {
+    validateForm(scope) {
+      alert("Form Submitted!");
     },
-
-    data: () => ({
-      email: '',
-      max: '',
-      min: '',
-      number: null,
-      url: '',
-      required: '',
-      show: false,
-      show2: false,
-      show3: false,
-    }),
-
-    methods: {
-      validateForm (scope) {
-        alert('Form Submitted!')
-      },
-    },
-  }
+  },
+};
 </script>

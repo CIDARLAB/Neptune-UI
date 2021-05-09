@@ -1,9 +1,5 @@
 <template>
-  <v-container
-    id="google-maps"
-    fluid
-    tag="section"
-  >
+  <v-container id="google-maps" fluid tag="section">
     <v-row>
       <v-col cols="12">
         <base-material-card
@@ -19,7 +15,7 @@
                 width="100%"
                 height="450"
                 frameborder="0"
-                style="border:0"
+                style="border: 0"
                 allowfullscreen
               />
             </v-sheet>
@@ -27,10 +23,7 @@
         </base-material-card>
       </v-col>
 
-      <v-col
-        cols="12"
-        md="6"
-      >
+      <v-col cols="12" md="6">
         <base-material-card
           color="success"
           inline
@@ -44,7 +37,7 @@
                 width="100%"
                 height="450"
                 frameborder="0"
-                style="border:0"
+                style="border: 0"
                 allowfullscreen
               />
             </v-sheet>
@@ -52,10 +45,7 @@
         </base-material-card>
       </v-col>
 
-      <v-col
-        cols="12"
-        md="6"
-      >
+      <v-col cols="12" md="6">
         <base-material-card
           color="success"
           inline
@@ -69,7 +59,7 @@
                 width="100%"
                 height="450"
                 frameborder="0"
-                style="border:0"
+                style="border: 0"
                 allowfullscreen
               />
             </v-sheet>
