@@ -1,9 +1,5 @@
 <template>
-  <v-container
-    id="login"
-    class="fill-height justify-center"
-    tag="section"
-  >
+  <v-container id="login" class="fill-height justify-center" tag="section">
     <v-row justify="center">
       <v-slide-y-transition appear>
         <base-material-card
@@ -15,9 +11,7 @@
         >
           <template v-slot:heading>
             <div class="text-center">
-              <h1 class="display-2 font-weight-bold mb-2">
-                Login
-              </h1>
+              <h1 class="display-2 font-weight-bold mb-2">Login</h1>
               <!-- <v-btn
                 v-for="(social, i) in socials"
                 :key="i"
@@ -72,42 +66,42 @@
 </template>
 
 <script>
-  import router from '../../router'
-  import axios from 'axios'
-  export default {
-    name: 'PagesLogin',
+import router from "../../router";
+import axios from "axios";
+export default {
+  name: "PagesLogin",
 
-    components: {
-      PagesBtn: () => import('./components/Btn'),
+  components: {
+    PagesBtn: () => import("./components/Btn"),
+  },
+
+  data: () => ({
+    email: "",
+    password: "",
+  }),
+
+  methods: {
+    login: function (event) {
+      event.preventDefault();
+      console.log(this.email, this.password);
+
+      let data = {
+        email: this.email,
+        password: this.password,
+      };
+      let self = this;
+
+      axios
+        .post("/api/v2/login", data)
+        .then((response) => {
+          // console.log("Logged in",response)
+          self.$store.commit("updateUser", response.data.user);
+          router.push("/dashboard");
+        })
+        .catch((errors) => {
+          console.log("Cannot log in", errors);
+        });
     },
-
-    data: () => ({
-      email: '',
-      password: '',
-    }),
-
-    methods: {
-      login: function(event) {
-        event.preventDefault()
-        console.log(this.email, this.password)
-
-        let data = {    
-            email: this.email,    
-            password: this.password    
-        }
-        let self = this
-
-        axios.post("/api/v2/login", data)    
-            .then((response) => {    
-                // console.log("Logged in",response)
-                self.$store.commit('updateUser', response.data.user)    
-                router.push("/dashboard")
-
-            })    
-            .catch((errors) => {    
-                console.log("Cannot log in", errors)    
-            })    
-      }
-    }
-  }
+  },
+};
 </script>
