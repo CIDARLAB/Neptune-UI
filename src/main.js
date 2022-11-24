@@ -28,13 +28,12 @@ import { Integrations } from "@sentry/tracing";
 
 Sentry.init({
   Vue,
-  dsn:
-    "https://f3be65f5f52c4d10848f481cc1230e99@o522267.ingest.sentry.io/5633457",
+  dsn: "https://f3be65f5f52c4d10848f481cc1230e99@o522267.ingest.sentry.io/5633457",
   integrations: [new Integrations.BrowserTracing()],
   logErrors: true,
   // We recommend adjusting this value in production, or using tracesSampler
   // for finer control
-  tracesSampleRate: 1.0
+  tracesSampleRate: 1.0,
 });
 
 Vue.config.productionTip = false;
@@ -42,7 +41,7 @@ Vue.config.productionTip = false;
 Vue.use(
   new VueSocketIO({
     debug: true,
-    connection: "http://" + window.location.hostname + ":3000"
+    connection: "http://" + window.location.hostname + ":3000",
     // vuex: {
     //     store,
     //     actionPrefix: 'SOCKET_',
@@ -53,7 +52,7 @@ Vue.use(
 );
 
 router.beforeEach((to, from, next) => {
-  const authRequired = to.matched.some(route => route.meta.requiresAuth);
+  const authRequired = to.matched.some((route) => route.meta.requiresAuth);
   const loggedin = store.getters.isLoggedIn;
   console.log("To:", to.path, "loggedin:", loggedin, "AuthReq:", authRequired);
 
@@ -93,5 +92,5 @@ new Vue({
   store,
   vuetify,
   i18n,
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount("#app");
